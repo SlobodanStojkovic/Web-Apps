@@ -1,7 +1,7 @@
 const gallery = document.querySelector('.gallery');
 const imgId = localStorage.getItem("1");
 let url = "https://rickandmortyapi.com/api/character/" + imgId;
-console.log(url);
+
 /* localStorage.removeItem("1"); */
 
 let displayInformations = () => {
@@ -41,3 +41,9 @@ Status: ${characterStatus}`;
         })
 }
 displayInformations();
+
+let goHomeButton = document.querySelector(".goHomeBtn");
+
+let goHome = () => window.location.replace("index.html");;
+
+goHomeButton.addEventListener("click", goHome);
