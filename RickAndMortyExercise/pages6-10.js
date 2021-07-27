@@ -1,9 +1,6 @@
 const buttonElement = document.querySelector('#button');
 const gallery = document.querySelector('.gallery');
 
-const url1 = 'https://rickandmortyapi.com/api/character';
-
-
 const getRickAndMorty = (url) => {
     fetch(url)
         .then(response => response.json())
@@ -54,7 +51,7 @@ const getRickAndMorty = (url) => {
             });
         })
 }
-getRickAndMorty("https://rickandmortyapi.com/api/character");
+getRickAndMorty("https://rickandmortyapi.com/api/character?page=6");
 
 let page6 = document.querySelector(".page6");
 let page7 = document.querySelector(".page7");

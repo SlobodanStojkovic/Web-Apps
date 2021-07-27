@@ -1,16 +1,13 @@
 const buttonElement = document.querySelector('#button');
 const gallery = document.querySelector('.gallery');
 
-const url1 = 'https://rickandmortyapi.com/api/character';
-
-
-const getRickAndMorty = (url) => {
+const getRickAndMorty = url => {
     fetch(url)
         .then(response => response.json())
 
         .then(data => {
             gallery.innerHTML = "";
-            console.log(data);
+            
             data.results.forEach(element => {
 
                 let characterImgURL = element.image;
