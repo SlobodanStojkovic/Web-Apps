@@ -1,0 +1,47 @@
+body {
+    background-image: url("./assets/rickAndMortyBackground.png");
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+
+.likeImageButton {
+    padding-right: 5px;
+    position: relative;
+    bottom: 2px;
+}
+
+.gallery {
+    justify-content: center;
+}
+
+.oneCharacter {
+    background-color: white;
+    width: 22%;
+    padding: 0;
+}
+
+.charactersImg {
+    width: 100%;
+}
+
+.btn {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid green;
+}
+
+.btn:hover {
+    background-color: green;
+    color: white;
+}
+
+.characterName {
+    margin: 0 auto;
+    width: 80%;
+    text-align: left;
+    font-weight: bolder;
+    padding: 10px 0;
+}
+
+
+
