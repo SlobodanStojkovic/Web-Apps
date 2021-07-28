@@ -44,6 +44,6 @@ displayInformations();
 
 let goHomeButton = document.querySelector(".goHomeBtn");
 
-let goHome = () => window.location.replace("index.html");;
+let goHome = () => window.location.replace("index.html");
 
 goHomeButton.addEventListener("click", goHome);
