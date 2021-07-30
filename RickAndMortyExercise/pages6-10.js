@@ -7,7 +7,7 @@ const getRickAndMorty = (url) => {
 
         .then(data => {
             gallery.innerHTML = "";
-            console.log(data);
+            
             data.results.forEach(element => {
 
                 let characterImgURL = element.image;
@@ -36,9 +36,13 @@ const getRickAndMorty = (url) => {
                 $div.append(img);
                 $div.append($p);
                 $div.append(button);
+                
+                const greenOnClick = () => button.classList.toggle("greenOnClick");     //this toggles class greenOnClick to like button whenever its clicked
+
+                button.addEventListener("click", greenOnClick);
             });
 
-            var $characterImages = document.querySelectorAll(".charactersImg");
+            const $characterImages = document.querySelectorAll(".charactersImg");
 
             $characterImages.forEach(element => {
                 element.addEventListener("click", function () {
@@ -60,7 +64,6 @@ let page9 = document.querySelector(".page9");
 let page10 = document.querySelector(".page10");
 
 let selectLi = document.querySelectorAll(".page");
-console.log(selectLi);
 
 const removeGreen = page => {
     selectLi.forEach(element => {

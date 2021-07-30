@@ -19,7 +19,6 @@ let displayInformations = () => {
             let characterSpecies = data.species;
             let characterStatus = data.status;
 
-
             let $div = document.createElement("div");
             let img = document.createElement("img");
             let $p = document.createElement("p");

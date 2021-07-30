@@ -4,6 +4,10 @@ body {
     background-repeat: repeat-y;
 }
 
+.container-fluid {
+    padding: 0;
+}
+
 .likeImageButton {
     padding-right: 5px;
     position: relative;
@@ -12,6 +16,8 @@ body {
 
 .gallery {
     justify-content: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .oneCharacter {
@@ -30,17 +36,17 @@ body {
     border: 1px solid green;
 }
 
-.btn:hover {
-    background-color: green;
-    color: white;
-}
-
 .characterName {
     margin: 0 auto;
     width: 80%;
     text-align: left;
     font-weight: bolder;
     padding: 10px 0;
+}
+
+.greenOnClick {
+    background-color: green;
+    color: white;
 }
 
 

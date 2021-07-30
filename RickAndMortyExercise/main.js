@@ -1,4 +1,3 @@
-const buttonElement = document.querySelector('#button');
 const gallery = document.querySelector('.gallery');
 
 const getRickAndMorty = url => {
@@ -7,7 +6,7 @@ const getRickAndMorty = url => {
 
         .then(data => {
             gallery.innerHTML = "";
-            
+
             data.results.forEach(element => {
 
                 let characterImgURL = element.image;
@@ -36,9 +35,13 @@ const getRickAndMorty = url => {
                 $div.append(img);
                 $div.append($p);
                 $div.append(button);
+
+                const greenOnClick = () => button.classList.toggle("greenOnClick");     //this toggles class greenOnClick to like button whenever its clicked
+
+                button.addEventListener("click", greenOnClick);
             });
 
-            var $characterImages = document.querySelectorAll(".charactersImg");
+            const $characterImages = document.querySelectorAll(".charactersImg");
 
             $characterImages.forEach(element => {
                 element.addEventListener("click", function () {
@@ -53,6 +56,7 @@ const getRickAndMorty = url => {
 }
 getRickAndMorty("https://rickandmortyapi.com/api/character");
 
+
 let page1 = document.querySelector(".page1");
 let page2 = document.querySelector(".page2");
 let page3 = document.querySelector(".page3");
@@ -60,7 +64,7 @@ let page4 = document.querySelector(".page4");
 let page5 = document.querySelector(".page5");
 
 let selectLi = document.querySelectorAll(".page");
-console.log(selectLi);
+
 
 const removeGreen = page => {
     selectLi.forEach(element => {
@@ -94,3 +98,6 @@ page5.addEventListener("click", function () {
     getRickAndMorty("https://rickandmortyapi.com/api/character?page=5");
     removeGreen(".page5");
 })
+
+
+
