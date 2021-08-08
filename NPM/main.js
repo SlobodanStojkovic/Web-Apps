@@ -1,13 +1,13 @@
-var funnyWords = require("funny-words");
-var randomWords = require("random-words");
-var oneLinerJokes = require("one-liner-joke");
-var figlet = require("figlet");
-var cowSay = require("cowsay");
+let funnyWords = require("funny-words");
+let randomWords = require("random-words");
+let oneLinerJokes = require("one-liner-joke");
+let figlet = require("figlet");
+let cowSay = require("cowsay");
 
 console.log(funnyWords("Dont worry, be happy, life is short"));
 console.log(randomWords());
 
-var joke1 = oneLinerJokes.getRandomJoke();
+const joke1 = oneLinerJokes.getRandomJoke();
 console.log(joke1);
 console.log(joke1.body);
 
