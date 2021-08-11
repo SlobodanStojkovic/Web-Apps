@@ -20,10 +20,10 @@ let items = [
 let ingredientsList = React.createElement(
     "ul",
     { className: "ingredients" },
-    items.map((ingredient, i) => React.createElement("li", { key: i }, ingredient))
+    items.map((ingredient, i) => React.createElement("li", { id: i }, ingredient))
 );
 
 
 let rootElement = React.createElement("div", null, orderedlist, ingredientsList)
 
-ReactDOM.render(rootElement, selectRoot);
+ReactDOM.render(rootElement, selectRoot);       //we can RENDER only once in react >>> here we append rootElement to the selectRoot element
