@@ -1,0 +1,11 @@
+article {
+    background-color: gray;
+    color: white;
+    margin: 20px;
+    padding: 10px;
+}
+
+h3 {
+    color: black;
+    font-weight: bolder;
+}
