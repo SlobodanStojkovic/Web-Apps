@@ -3,14 +3,11 @@ import { Users } from "../Users/Users";
 import { RandomUserList } from "../../Data/RandomUserList";
 
 
-export const UserList = () => {
-
+export const UserList = ({isListView}) => {
     return (
         RandomUserList.slice(0, 10).map((User, index) => {
-
             return (
-
-                < Users User={User} key={index} />
+                < Users isListView={isListView} User={User} key={index} />
             )
         })
     )

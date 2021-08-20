@@ -3,13 +3,13 @@ import "./UserInfo.css";
 export const UserInfo = ({ name, email, dob }) => {
     return (
         <div class="info">
-            <p>
+            <p className="name">
                 name: {name}
             </p>
-            <p>
+            <p className="email">
                 email: {email}
             </p>
-            <p>
+            <p  className="dob">
                 date of birth: {dob}
             </p>
         </div>
