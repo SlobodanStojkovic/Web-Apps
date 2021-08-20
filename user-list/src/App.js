@@ -1,15 +1,16 @@
 import './App.css';
 import { Header } from "./Components/Header/Header";
-import { UserList } from "./Components/UserList/UserList";
+import { Users } from "./Components/Users/Users";
 import { Footer } from "./Components/Footer/Footer";
 import { Button } from "./Components/Button/Button";
 import { useState } from 'react';
 
 
 
+
 function App() {
 
-  const [isListView, setIsListView] = useState(false);
+  const [isListView, setIsListView] = useState(true);
 
   const onLayoutChange = () => {
     setIsListView(!isListView)
@@ -19,7 +20,7 @@ function App() {
     <div className="App">
       <Header />
       <Button isListView={isListView} onLayoutChange={onLayoutChange} />
-      <UserList isListView={isListView}/>
+      <Users isListView={isListView} />
       <Footer />
     </div>
   );

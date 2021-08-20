@@ -1,4 +1,4 @@
-export const RandomUserList = [
+export const users = [
     {
       gender: "male",
       name: {
