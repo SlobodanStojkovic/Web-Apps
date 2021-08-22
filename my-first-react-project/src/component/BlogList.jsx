@@ -1,14 +1,33 @@
-import React, { Fragment } from "react";
-import Blog from "./Blog/Blog";
+import React, { Component } from "react";
+import { getBlogs } from "../Services/BlogService";
+import "./BlogList.css";
 
-const BlogList = ({ articles }) => {
-    let copyArticles = articles.map((article, index) => {
-        return (<Blog articleTitle={article.articleTitle} articleBody={article.articleBody} key={index} />)
+
+export class BlogList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            blogs: [],
+        }
     }
-    )
-    return <Fragment>
-        {copyArticles}
-    </Fragment>
-}
 
-export default BlogList;
+    componentDidMount() {
+        getBlogs()
+            .then(blogs => {
+                this.setState({ blogs })
+            });
+    }
+
+    render() {
+        return (
+            < div className="blogList" >
+                {this.state.blogs.map((post, index) => (
+                    <div className="blogItem" key={index}>
+                        <h3>{post.title}</h3>
+                        <p>{post.body}</p>
+                    </div >
+                ))};
+            </div >
+        )
+    }
+};
