@@ -1,10 +1,11 @@
 import "./UsersListView.css";
 
 
-export const UsersListView = ({ users }) => {
+export const UsersListView = ({ filteredUsers }) => {
+
     return (
         <ul className="userWrapperList">
-            {users.map((user, index) => (
+            {filteredUsers.map((user, index) => (
                 <li className="listView" key={index}>
                     <img src={user.picture.large} alt="" className="circle" />
                     <div className="infoList">

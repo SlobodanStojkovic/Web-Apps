@@ -1,11 +1,11 @@
 import "./Users.css";
 import { UsersListView } from "../UsersListView/UsersListView";
 import { UsersGridView } from "../UsersGridView/UsersGridView";
-import { users } from "../../Data/RandomUserList";
 
 
-export const Users = ({ isListView }) => {
+
+export const Users = ({ isListView, users, filteredUsers }) => {
     return (
-        isListView ? <UsersListView users={users} /> : <UsersGridView users={users} />
+        isListView ? <UsersListView users={users} filteredUsers={filteredUsers} /> : <UsersGridView users={users} filteredUsers={filteredUsers} />
     )
 }

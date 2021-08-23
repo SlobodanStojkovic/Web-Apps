@@ -1,11 +1,14 @@
 import "./UsersGridView.css";
 import { getHiddenEmail } from "./getHiddenEmail";
 
-export const UsersGridView = ({ users }) => {
+
+
+
+export const UsersGridView = ({ filteredUsers }) => {
 
     return (
         <ul className="userWrapperGrid">
-            {users.map((user, index) => (
+            {filteredUsers.map((user, index) => (
                 <li className="gridView card" key={index}>
                     <img src={user.picture.large} alt="" />
                     <div className="infoGrid">

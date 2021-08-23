@@ -1,3 +1,5 @@
+/* If we dont fetch data we can use this Random User List data from here */
+
 export const users = [
     {
       gender: "male",
