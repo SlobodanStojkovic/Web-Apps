@@ -1,0 +1,14 @@
+.post {
+    text-align: start;
+    width: 80%;
+}
+
+a {
+    font-size: larger;
+    margin: 0;
+}
+
+.post a {
+    text-decoration: none;
+    color: black;
+}
