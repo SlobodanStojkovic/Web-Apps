@@ -1,9 +1,8 @@
-const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
+const apiEndpoint = "https://jsonplaceholder.typicode.com/";
 
 export const getDataFromApi = () => {
-    return fetch(apiEndpoint)
+    return fetch(`${apiEndpoint}posts`)
         .then(response => {
-            console.log(response)
             return response.json()
         })
 
@@ -15,7 +14,7 @@ export const getDataFromApi = () => {
 
 
 export const getSingleBlog = (id) => {
-    return fetch(`${apiEndpoint}/${id}`)
+    return fetch(`${apiEndpoint}posts/${id}`)
         .then(response => {
             return response.json()
         })
@@ -23,7 +22,31 @@ export const getSingleBlog = (id) => {
             return {
                 title: myResponse.title,
                 body: myResponse.body,
-                id: myResponse.id
+                id: myResponse.id,
+                userId: myResponse.userId
             }
+        })
+}
+
+export const getAuthor = (userId) => {
+    return fetch(`${apiEndpoint}users/${userId}`)
+        .then(response => {
+            return response.json()
+        })
+        .then(authorResponse => {
+            return {
+                title: authorResponse.title,
+                body: authorResponse.body,
+                id: authorResponse.id,
+                userId: authorResponse.userId
+            }
+        })
+}
+
+export const getAuthorPosts = (userId) => {
+    return fetch(`${apiEndpoint}users/${userId}/posts`)
+        .then((response) => response.json())
+        .then((result) => {
+            return result
         })
 }

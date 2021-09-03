@@ -18,7 +18,7 @@ export const Home = () => {
 
     return (
         <>
-            <h1 className="ms-5">POSTS</h1>
+            <h1 className="text-center">POSTS</h1>
             {blogs.map((blog, index) => (
                 <div className="post mt-5 ms-5" key={index}>
                     <Link to={`/posts/${blog.id}`}>
