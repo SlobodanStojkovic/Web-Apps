@@ -6,7 +6,7 @@ export const Header = () => {
     return (
         <header>
             <nav className="navbar navbar-light bg-light">
-                <span className="navbar-brand mb-0 ms-5 fw-bold fs-1">BIT BLOG</span>
+                <Link className="bitBlog" to="/"><span className="navbar-brand mb-0 ms-5 fw-bold fs-1">BIT BLOG</span></Link>
                 <div className="links">
                     <Link to="/"> Home </Link>
                     <Link to="/authors"> Authors </Link>

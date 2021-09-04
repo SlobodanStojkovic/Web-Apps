@@ -1,8 +1,8 @@
-import { getAuthor, getSingleBlog, getAuthorPosts } from "../../../services/Services";
+import { getSingleBlog, getAuthorPosts } from "../../../services/Services";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./SingleBlog.css";
-
+import { Link } from "react-router-dom";
 
 export const SingleBlog = (props) => {
 
@@ -32,7 +32,7 @@ export const SingleBlog = (props) => {
         getAuthorPosts(blog.userId)
             .then(posts => {
                 posts.map((post) => {
-                    postsArray.push(post.title)
+                    postsArray.push(post.title, post.id)
                     return postsArray;
                 })
                 setPosts(postsArray)
@@ -41,10 +41,31 @@ export const SingleBlog = (props) => {
     }, [blog.userId])
 
 
+    let rand1 = () => {
+        let range = 20;
+        let number = Math.floor(Math.random() * range / 2) * 2;
+        return number;
+    }
 
+    let rand2 = () => {
+        let num = post1 + 2;
+        if (num > 20) {
+            num = num - 4;
+        }
+        return num;
+    }
 
+    let rand3 = () => {
+        let num = post1 + 4;
+        if (num > 20) {
+            num = num - 8;
+        }
+        return num;
+    }
 
-
+    let post1 = rand1();
+    let post2 = rand2();
+    let post3 = rand3();
 
     return (
         <div>
@@ -56,9 +77,9 @@ export const SingleBlog = (props) => {
             <div className="horizontalLine m-3 mt-5 ms-5 me-5 "></div>
 
             <p className="ms-5 me-5">3 more posts from same author</p>
-            <p className="ms-5 me-5">{posts}</p>
-            <p className="ms-5 me-5"></p>
-            <p className="ms-5 me-5"></p>
+            <Link to={`/posts/${posts[post1 + 1]}`}><p className="ms-5 me-5">{posts[post1]}</p></Link>
+            <Link to={`/posts/${posts[post2 + 1]}`}><p className="ms-5 me-5">{posts[post2]}</p></Link>
+            <Link to={`/posts/${posts[post3 + 1]}`}><p className="ms-5 me-5">{posts[post3]}</p></Link>
         </div>
     )
 }
