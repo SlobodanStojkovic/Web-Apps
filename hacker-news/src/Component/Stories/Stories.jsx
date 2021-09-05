@@ -1,35 +1,63 @@
 import "./Stories.css";
 import { getHackerIds } from "../../Services/idsService";
 import { useEffect, useState } from "react";
-import { getHackerNews } from "../../Services/newsService";
+import { calculateTime } from "../../Services/calculateTime";
+import { showBaseUrl } from "../../Services/showBaseUrl";
+
 
 
 
 export const Stories = () => {
 
-
     const [top10Ids, setTop10Ids] = useState([]);
-
-    getHackerIds().then((top10Ids) => {
-        let tenIds = top10Ids.slice(0, 10);
-        setTop10Ids(tenIds)
-    });
-
-    const uniqueId = top10Ids[0];
-
-    const [top10Stories, setTop10Stories] = useState([]);
+    const [stories, setStories] = useState([]);
 
     useEffect(() => {
-        getHackerNews(uniqueId)
-            .then((news) => {
-                setTop10Stories(news.title)
-            })
+        getHackerIds()
+            .then(myresponse => setTop10Ids(myresponse));
     }, [])
 
 
-    return (
-        <div>
-            <p></p>
-        </div>
-    )
+    useEffect(() => {
+        const promises = [];
+        top10Ids.forEach(uniqueId => {
+            promises.push(fetch(`https://hacker-news.firebaseio.com/v0/item/${uniqueId}.json?print=pretty`).then(res => res.json()))
+        })
+        Promise.all(promises).then(listOfStories => setStories(listOfStories))
+    }, [top10Ids])
+
+    if (!(stories.length === 10)) {
+        return (
+            <div>Loading page...</div>
+        )
+    } else
+        return (
+            <div className='main'>
+                <ol>
+                    {
+
+                        stories.map((story, index) => {
+                            return (
+
+                                <li key={index}>
+                                    <div className='onenews' key={index}>
+                                        <p className='firstrow'>
+                                            <span className='title'>{story.title}</span> 
+                                            <span className='url'><small className='brackets'> ( </small>{showBaseUrl(story.url)} <small className='brackets'>)</small></span>
+                                        </p>
+                                        <p>
+                                            <span className='points'><i className="fas fa-heart"></i>{` `}{story.score} points</span> <span className='author'><i className="fal fa-user"></i>{` `}{story.by}</span> <span className='time'><i className="far fa-clock"></i>{calculateTime(`${story.time}`)}</span>
+                                            <span className='comments'>{`   ${story.kids.length} comments`}</span>
+                                        </p>
+                                    </div>
+                                </li>
+                            )
+                        })
+                    }
+                </ol>
+
+            </div>
+
+
+        )
 }
