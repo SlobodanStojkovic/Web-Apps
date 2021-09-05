@@ -28,6 +28,16 @@ export const getSingleBlog = (id) => {
         })
 }
 
+export const getAllAuthors = () => {
+    return fetch(`${apiEndpoint}users`)
+        .then(response => {
+            return response.json()
+        })
+        .then(allAuthors => {
+            return allAuthors
+        })
+}
+
 export const getAuthor = (userId) => {
     return fetch(`${apiEndpoint}users/${userId}`)
         .then(response => {
@@ -35,10 +45,7 @@ export const getAuthor = (userId) => {
         })
         .then(authorResponse => {
             return {
-                title: authorResponse.title,
-                body: authorResponse.body,
-                id: authorResponse.id,
-                userId: authorResponse.userId
+                name: authorResponse.name,
             }
         })
 }
