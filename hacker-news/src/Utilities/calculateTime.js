@@ -12,7 +12,7 @@ export const calculateTime = (time) => {
     let minutes = "0" + date.getMinutes();
 
     // Seconds part from the timestamp (if we need them)
-    let seconds = "0" + date.getSeconds();
+    // let seconds = "0" + date.getSeconds(); 
 
     // Will display time in 10:30 format
     let formattedTime = hours + ':' + minutes.substr(-2);
