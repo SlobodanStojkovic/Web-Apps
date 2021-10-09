@@ -54,10 +54,10 @@ export const SingleBlog = (props) => {
     return (isLoading
         ? <h1>Loading...</h1>
         : <div>
-            <a className="ms-5" href="/"> {"<"}Back</a>   {/* <Link to="/">{`<Back`}</Link> but without className*/}
-            <h3 className="text-center m-4 mb-1">{blog.title}</h3>
-            <h5 className="text-center">{author.name}</h5>
-            <p className="text-center m-3 ms-5">{blog.body}</p>
+            <a className="ms-5 backLink" href="/"> {"<"}Back</a>   {/* <Link to="/">{`<Back`}</Link> but without className*/}
+            <h3 className="text-center m-4 mb-1 fw-bold">Title: {blog.title}</h3>
+            <h5 className="text-center mb-5">Author: {author.name}</h5>
+            <p className="text-center m-3 ms-5 fs-5">{blog.body}</p>
 
             <div className="horizontalLine m-3 mt-5 ms-5 me-5 "></div>
 

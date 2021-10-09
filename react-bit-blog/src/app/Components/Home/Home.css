@@ -1,6 +1,7 @@
 .post {
     text-align: start;
     width: 80%;
+    margin: 0 auto;
 }
 
 a {
@@ -11,4 +12,10 @@ a {
 .post a {
     text-decoration: none;
     color: black;
+}
+
+main {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 100px;
 }

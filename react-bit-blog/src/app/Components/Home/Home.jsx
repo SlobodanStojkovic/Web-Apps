@@ -17,10 +17,10 @@ export const Home = () => {
     }, [])
 
     return (
-        <>
-            <h1 className="text-center">POSTS</h1>
+        <main>
+            <h1 className="text-center fw-bolder mt-3">POSTS</h1>
             {blogs.map((blog, index) => (
-                <div className="post mt-5 ms-5" key={index}>
+                <div className="post mt-5" key={index}>
                     <Link to={`/posts/${blog.id}`}>
                         <h5 id={blog.id} >{blog.title}</h5>
                         <p>{blog.body}</p> <hr></hr>
@@ -28,6 +28,6 @@ export const Home = () => {
                 </div>
             )
             )}
-        </>
+        </main>
     )
 }

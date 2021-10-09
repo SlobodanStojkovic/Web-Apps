@@ -1,3 +1,15 @@
+Check how this Blog works by clicking here >>> [bit-blog](https://slobodanstojkovic.github.io/bit-blog/)
+
+BIT BLOG is a Single Page Application whose main purpose is to create show example of a blog. Blog pulls data from [bit-blog API](https://jsonplaceholder.typicode.com/)
+
+Its created using React, JavaScript, Bootstrap, HTML5, CSS3, AJAX.
+
+You can click every blog, you can see who blog author is, and then you can click 3 more posts from same author.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
